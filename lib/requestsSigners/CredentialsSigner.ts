@@ -1,9 +1,7 @@
 import {SecretCredentials, SimpleRequestSigner} from "./SimpleRequestSigner";
-import {DataCenter} from "../gigya";
 import SigUtils from '../sig-utils';
+import strictUriEncode from "../helpers/strictUriEncode";
 import {GigyaRequest, RequestParams} from "../RequestFactory";
-
-const strictUriEncode = require('strict-uri-encode') as (str: string) => string;
 
 interface SignedRequestParams {
     timestamp: number;

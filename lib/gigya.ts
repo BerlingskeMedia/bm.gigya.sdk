@@ -1,4 +1,3 @@
-import _ = require('lodash');
 import sleep from './helpers/sleep';
 import SigUtils from './sig-utils';
 import Admin, {DataCenter} from './admin';
@@ -23,6 +22,7 @@ import {AuthBearerSigner, isRSACreds, RSACredentials} from "./requestsSigners/Au
 import {isSecretCredentials, SecretCredentials} from "./requestsSigners/SimpleRequestSigner";
 import {ISigner} from "./requestsSigners/ISigner";
 import {isCredentials} from "./requestsSigners/AuthRequestSigner";
+import strictUriEncode from "./helpers/strictUriEncode";
 
 export * from './sig-utils';
 export * from './admin';
@@ -53,8 +53,6 @@ export type RequestParams =
     FormatJsonRequest
     & Partial<SignedRequestParams>
     & { [key: string]: string | null | number | boolean };
-
-const strictUriEncode = require('strict-uri-encode') as (str: string) => string;
 
 export type CredentialsType = NoCredentials | { secret: PartnerSecret } | SecretCredentials | RSACredentials;
 
