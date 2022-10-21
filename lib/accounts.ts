@@ -750,7 +750,7 @@ export interface AccountsResetPasswordParams {
     securityFields: string;
     email?: string;
     lang?: string;
-    sendEmail?: string;
+    sendEmail?: boolean;
 }
 
 export interface AccountsResetPasswordResponse {
